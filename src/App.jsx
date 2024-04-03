@@ -6,16 +6,25 @@ import { conceptGenerator } from "./utils/conceptGenerator";
 function App() {
   const [title, setTitle] = useState("");
   const [slogan, setSlogan] = useState("");
-  const [logoConcepts,setLogoConcepts] = useState([])
+  const [logoConcepts, setLogoConcepts] = useState([]);
+  const [loading,setLoading] = useState(false)
   const generateLogos = () => {
-    const concept = conceptGenerator();
-    const singleConcept = {
-      ...concept,
-      title: title,
-      slogan: slogan,
-    };
-    setLogoConcepts([...logoConcepts,singleConcept])
-    console.log(singleConcept);
+    setLoading(true)
+    const generatedConcepts = [];
+    for (let i = 0; i < 9; i++) {
+      const concept = conceptGenerator();
+      const singleConcept = {
+        ...concept,
+        title: title, // Assuming title and slogan are defined somewhere
+        slogan: slogan,
+      };
+      generatedConcepts.push(singleConcept);
+      console.log(singleConcept);
+    }
+    setLogoConcepts([...logoConcepts, ...generatedConcepts]);
+    setTimeout(()=>{
+      setLoading(false)
+    },2000)
   };
   return (
     <>
@@ -52,8 +61,25 @@ function App() {
             See Magic !
           </button>
         </div>
-        <LogoViews logoConcepts={logoConcepts} />
+        {loading && 
+        <>
+        <div className="flex justify-center flex-col items-center
+          my-5">
+            <p className="my-5 text-4xl text-white bebas-neue-regular">Generating Logos...</p>
+          <img src="/ai.png" className="w-20 animate-bounce "/>
+          </div>
+        </>
+          }
+        { logoConcepts.length > 0 && <LogoViews logoConcepts={logoConcepts} />}
+         <h1
+          className="text-5xl text-center bebas-neue-regular my-5 py-5 rounded-xl shadow-sm
+       bg-amber-200 font-bold underline"
+        >Available Fonts</h1>
         <FontsPallets />
+         <h1
+          className="text-5xl text-center bebas-neue-regular my-5 py-5 rounded-xl shadow-sm
+       bg-amber-200 font-bold underline"
+        >Color Pallete Generate</h1>
         <ColorPallete />
       </div>
     </>
