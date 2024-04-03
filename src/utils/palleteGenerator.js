@@ -22,10 +22,10 @@ export const generateColorPalette = () => {
   return [...colorCodes1, ...colorCodes2];
 };
 export const generateWholePallete = () => {
-    let newPallete = [];
-    for (let i = 0; i < 5; i++) {
-      const colorCodes = generateColorPalette();
-      newPallete.push(colorCodes);
-    }
-    return newPallete;
-  };
+  let newPallete = [];
+  for (let i = 0; i < 5; i++) {
+    const colorCodes = generateColorPalette();
+    newPallete.push(colorCodes);
+  }
+  return newPallete;
+};

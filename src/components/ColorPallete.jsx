@@ -17,17 +17,17 @@ const ColorPallete = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center text-white flex-col space-y-3 my-5  max-w-max mx-auto  ">
+    <div className="  grid grid-cols-3  gap-5 my-5 mx-auto   ">
       {colors.map((color, index) => (
         <div
           key={index}
-          className="flex items-center justify-center shadow-sm border rounded-lg"
+          className="flex items-center justify-center shadow-sm  rounded-lg "
         >
           {color.map((color, index) => (
             <span
               key={index}
               style={{ backgroundColor: color }}
-              className="w-16 h-16"
+              className="w-16 h-16 shadow-sm"
             ></span>
           ))}
         </div>
