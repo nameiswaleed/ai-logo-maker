@@ -2,7 +2,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: "Campana";
+  src: url("/campana_script/CampanaScript_PERSONAL_USE_ONLY.otf");
+}
+@font-face {
+  font-family: "Catfiles";
+  src: url("/catfiles/Catfiles.otf");
+}
+@font-face {
+  font-family: "DevilCandle";
+  src: url("/devil_candle/DevilCandle_PERSONAL_USE_ONLY.otf");
+}
+@font-face {
+  font-family: "EnchantedLand";
+  src: url("/enchanted_land/Enchanted\ Land.otf");
+}
+@font-face {
+  font-family: "Pervitina";
+  src: url("/pervitina_dex/Pervitina-Dex-FFP.ttf");
+}
+@font-face {
+  font-family: "Raillinc";
+  src: url("/raillinc/Raillinc.otf");
+}
+@font-face {
+  font-family: "vogue";
+  src: url("/vogue/Vogue.ttf");
+}
 .righteous-regular {
   font-family: "Righteous", sans-serif;
   font-weight: 400;
@@ -23,6 +50,35 @@
   font-weight: 400;
   font-style: normal;
 }
-body{
+
+.campana {
+  font-family: "Campana";
+}
+
+.catfiles {
+  font-family: "Catfiles";
+}
+
+.devil-candle {
+  font-family: "DevilCandle";
+}
+
+.enchanted-land {
+  font-family: "EnchantedLand";
+}
+
+.pervitina {
+  font-family: "Pervitina";
+}
+
+.raillinc {
+  font-family: "Raillinc";
+}
+
+.vogue {
+  font-family: "vogue";
+}
+
+body {
   @apply bg-gray-800;
 }
