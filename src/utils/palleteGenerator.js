@@ -11,8 +11,8 @@ export const generateColorPalette = () => {
     .colors(Math.random() * 4);
   const secondColors = scheme
     .from_hue(((Math.random(5) * 270) / Math.random()) * Date.now())
-    .scheme("contrast") // Using a triadic color scheme for better contrast
-    .variation("light")
+    .scheme("triade") // Using a triadic color scheme for better contrast
+    .variation("hard")
     .colors();
 
   // Convert colors to hexadecimal format
